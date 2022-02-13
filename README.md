@@ -1,38 +1,89 @@
-# quine
-Self-replicating program
 
-This shell [quine](https://en.wikipedia.org/wiki/Quine_(computing)) prints an exact copy of itself. This means that `cat quine.sh` and `./quine.sh` are equivalent:
+Quine
 
-```shell
-#!/bin/sh
-# https://github.com/tingstad/quine
-
-b='\'
-s=\'
-top='#!/bin/sh
-# https://github.com/tingstad/quine
-'
-src='
-echo "$top
-b=$s$b$s
-s=$b$s
-top=$s$top$s
-src=$s$src$s
-$src"
-'
-
-echo "$top
-b=$s$b$s
-s=$b$s
-top=$s$top$s
-src=$s$src$s
-$src"
+Self-reproducing program
 
 ```
+apt-get install python3-pdfminer
+```
 
-It's therefore also equivalent to running `sh <(sh <(./quine.sh))` or `./quine.sh > 1 ; sh 1 > 2 ; sh 2`.
 
-I did not want to use `printf %s` for this quine. The trick was to get the quoting right on the "recursion line", [#14](https://github.com/tingstad/quine/blob/7b65d19f5f9834433b14cd13a540b89acd9d44e7/quine.sh#L14) (which has to match #9), I found the solution [here](http://c2.com/wiki/remodel/?QuineProgram).
+# Whitespace
 
-In [quine2.sh](https://github.com/tingstad/quine/blob/main/quine2.sh) I wanted to avoid variable assignments and minimize string interpretation (no `%` and `$`) and just use simple `printf` and subroutines (parameter less functions).
+## Syntax — Lexical Conventions
+
+> The PDF character set is divided into three classes, called regular, delimiter, and white-space characters. This
+> classification determines the grouping of characters into tokens. The rules defined in this sub-clause apply to
+> all characters in the file except within strings, streams, and comments.
+> 
+> [...]
+> 
+> All white-space characters are equivalent, except in comments, strings, and streams. In all other
+> contexts, PDF treats any sequence of consecutive white-space characters as one character.
+
+An example can be seen in [this blog post](https://blog.idrsolutions.com/2011/05/understanding-the-pdf-file-format-%E2%80%93-carriage-returns-spaces-and-other-gaps/).
+
+## Syntax - Name Objects & Dictionary Objects
+
+> A slash character (/) introduces a name. The slash is not part of the name itself [...]
+> There can be no white-space characters between the slash and the first
+> character in the name. The name may include any regular characters, but not
+> delimiter or white-space characters 
+
+> The first element of each entry is the key and the second
+> element is the value. The key must be a name
+
+> A dictionary is written as a sequence of key-value pairs enclosed in double angle brackets (<<...>>)
+
+## Syntax — Indirect Objects
+
+> The definition of an indirect object in a PDF file shall consist of its object number and generation number
+> (separated by white space), followed by the value of the object bracketed between the keywords obj and
+> endobj.
+
+## Syntax — Stream Objects
+
+> A stream shall consist of a dictionary followed by zero or more bytes bracketed between the keywords stream
+> (followed by newline) and endstream [...]
+> 
+> The keyword stream that follows the stream dictionary shall be followed by an end-of-line marker
+> consisting of either a CARRIAGE RETURN and a LINE FEED or just a LINE FEED [...]
+> 
+> The sequence of bytes that make up a stream lie between the end-of-line marker following the
+> stream keyword and the endstream keyword; the stream dictionary specifies the exact number of bytes. There
+> should be an end-of-line marker after the data and before endstream; this marker shall not be included in the
+> stream length. There shall not be any extra bytes, other than white space, between endstream and endobj.
+
+# Page Contents
+
+> A content stream [...]. The value may be either a single stream or an array of streams.
+> If the value is an array, the effect shall be as if all of the streams in the array were concatenated
+
+# Content Streams
+
+> The instructions are represented in the form of PDF objects, using the same object syntax as
+> in the rest of the PDF document. However, whereas the document as a whole is a
+> static, random-access data structure, the objects in the content stream are intended to be interpreted and acted upon sequentially.
+
+> A content stream, after decoding with any specified filters, is interpreted accord-
+> ing to the PDF syntax rules described in Section 3.1, “Lexical Conventions.” It
+> consists of PDF objects denoting operands and operators.
+
+> An operand is a direct object belonging to any of the basic PDF data types except
+> a stream. Dictionaries are permitted as operands only by certain specific opera-
+> tors. Indirect objects and object references are not permitted at all.
+
+> An operator is a PDF keyword that specifies some action to be performed, such as
+> painting a graphical shape on the page. An operator keyword is distinguished
+> from a name object by the absence of an initial slash character (/). Operators are
+> meaningful only inside a content stream.
+ 
+# Aside: Object Streams
+
+> Beginning with PDF 1.5, indirect objects may reside in object streams (see 7.5.7, "Object Streams"). They are
+> referred to in the same way; however, their definition shall not include the keywords obj and endobj, and their
+> generation number shall be zero.
+
+> a stream object in which a sequence of indirect objects may be stored, as an alternative to
+> their being stored at the outermost file level.
 
