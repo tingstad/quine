@@ -4,7 +4,13 @@ Quine
 Self-reproducing program
 
 ```
-apt-get install python3-pdfminer
+apt-get update
+apt-get install python3-pdfminer  # pdf2txt
+apt-get install poppler-utils  # pdftotext
+
+#validate pdf file:
+apt-get install ghostscript
+gs file.pdf
 ```
 
 
@@ -53,6 +59,10 @@ An example can be seen in [this blog post](https://blog.idrsolutions.com/2011/05
 > stream keyword and the endstream keyword; the stream dictionary specifies the exact number of bytes. There
 > should be an end-of-line marker after the data and before endstream; this marker shall not be included in the
 > stream length. There shall not be any extra bytes, other than white space, between endstream and endobj.
+
+## Syntax — File Structure
+
+> As a matter of convention, the tokens in a PDF file are arranged into lines; [...]. However, to increase compatibility with other applications that process PDF files, lines that are not part of stream object data are limited to no more than 255 characters
 
 # Page Contents
 
