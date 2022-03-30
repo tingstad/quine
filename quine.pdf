@@ -21,8 +21,8 @@ endstream endobj
 13 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
 /F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
 /Contents [ 15 0 R  27 0 R  4 0 R
-14 0 R  2 0 R  6 0 R  21 0 R  2 0 R  6 0 R
-20 0 R  4 0 R  19 0 R  2 0 R  6 0 R  % 12 0 ob... /Count
+14 0 R  2 0 R  25 0 R  21 0 R  2 0 R  25 0 R
+20 0 R  4 0 R  19 0 R  2 0 R  25 0 R  % 12 0 ob... /Count
 
 % 15 0 ob <Len 3  /  1>str BT end
 31 0 R  2 0 R  35 0 R  2 0 R  24 0 R  2 0 R  33 0 R  2 0 R
@@ -108,8 +108,8 @@ endstream endobj
 %74=>71, 57=>74
 74 0 R  4 0 R  57 0 R  2 0 R  11 0 R ] >> endobj
 
-6 0 obj << /Length 26 >> stream
-(\012) Tj T*  (\012) Tj T*
+6 0 obj << /Length 6 >> stream
+(TODO)
 endstream endobj
 
 7 0 obj << /Length 12 >> stream
@@ -141,7 +141,7 @@ endstream endobj
 endstream endobj
 
 18 0 obj << /Length 58 >> stream
-(20 0 R  4 0 R  19 0 R  2 0 R  6 0 R  % 12 0 ob... /Count)
+(20 0 R  4 0 R  19 0 R  2 0 R  25 0 R  % 12 0 ob... /Count)
 endstream endobj
 
 19 0 obj << /Length 45 >> stream
@@ -272,7 +272,7 @@ endstream endobj
 (32 0 R  2 0 R  37 0 R  2 0 R  24 0 R  2 0 R  31 0 R  2 0 R)
 endstream endobj
 44 0 obj << /Length 44 >> stream
-(14 0 R  2 0 R  6 0 R  21 0 R  2 0 R  6 0 R)
+(14 0 R  2 0 R  25 0 R  21 0 R  2 0 R  25 0 R)
 endstream endobj
 % magic happens here:
 45 0 obj << /Length 50 >> stream
