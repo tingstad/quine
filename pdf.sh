@@ -1,15 +1,11 @@
 #!/bin/sh
 
 main(){
-    codepage3=$(objectsencoded 16 21 | wordwrap)
-    codepage4=$((objectsencoded 22 22 && objectsencoded 29 40)| wordwrap)
-    codepage5=$((objectsencoded 41 48)| wordwrap)
-    codepage5b=$((objectsencoded 50 53)| wordwrap)
     inplace quine.pdf sed -E '/^%BEGIN 16-/,/^%END 16-/{
         /^%/!d
         /^%END 16-/{
             i\
-'"$(printf "$codepage3" | sed 's/$/\\/')"'
+'"$(objectsencoded 16 21 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -17,7 +13,7 @@ main(){
         /^%/!d
         /^%END PAGE 4/{
             i\
-'"$(printf "$codepage4" | sed 's/$/\\/')"'
+'"$((objectsencoded 22 22 && objectsencoded 29 40)| wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -25,7 +21,7 @@ main(){
         /^%/!d
         /^%END PAGE 5a/{
             i\
-'"$(printf "$codepage5" | sed 's/$/\\/')"'
+'"$(objectsencoded 41 48 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -33,7 +29,15 @@ main(){
         /^%/!d
         /^%END PAGE 5b/{
             i\
-'"$(printf "$codepage5b" | sed 's/$/\\/')"'
+'"$(objectsencoded 50 53 | wordwrap | sed 's/$/\\/')"'
+
+        }
+    }
+    /^%BEGIN PAGE 6/,/^%END PAGE 6/{
+        /^%/!d
+        /^%END PAGE 6/{
+            i\
+'"$(objectsencoded 54 66 | wordwrap | sed 's/$/\\/')"'
 
         }
     }' quine.pdf
