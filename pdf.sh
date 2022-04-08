@@ -40,6 +40,14 @@ main(){
 '"$(objectsencoded 54 66 | wordwrap | sed 's/$/\\/')"'
 
         }
+    }
+    /^%BEGIN PAGE 7/,/^%END PAGE 7/{
+        /^%/!d
+        /^%END PAGE 7/{
+            i\
+'"$(objectsencoded 67 78 | wordwrap | sed 's/$/\\/')"'
+
+        }
     }' quine.pdf
 }
 
