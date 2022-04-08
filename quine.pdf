@@ -3,9 +3,6 @@
 
 1 0 obj << /Type /Catalog  /Pages 12 0 R >> endobj
 
-12 0 obj <</Type /Pages  /Kids [13 0 R  28 0 R  79 0 R  24 0 R
-26 0 R  92 0 R  89 0 R] /Count 7  /MediaBox [0 0 595 842] >> endobj
-
 15 0 obj << /Length 31 >> stream
 BT  /F1 12 Tf  50 774 Td  18 TL
 endstream endobj
@@ -21,8 +18,8 @@ endstream endobj
 13 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
 /F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
 /Contents [ 15 0 R  27 0 R  4 0 R
-14 0 R  2 0 R  25 0 R  21 0 R  2 0 R  25 0 R
-20 0 R  4 0 R  19 0 R  2 0 R  25 0 R  % 12 0 ob... /Count
+14 0 R  2 0 R  25 0 R   %21 0 R  2 0 R  25 0 R
+  %20 0 R  4 0 R  19 0 R  2 0 R  25 0 R  % 12 0 ob... /Count
 
 % 15 0 ob <Len 3  /  1>str BT end
 31 0 R  2 0 R  35 0 R  2 0 R  6 0 R  2 0 R  33 0 R  2 0 R
@@ -140,6 +137,7 @@ endstream endobj
 (/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>)
 endstream endobj
 
+%TODO change/unused:
 18 0 obj << /Length 58 >> stream
 (20 0 R  4 0 R  19 0 R  2 0 R  25 0 R  % 12 0 ob... /Count)
 endstream endobj
@@ -218,8 +216,8 @@ endstream endobj
 43 0 obj << /Length 61 >> stream
 (32 0 R  2 0 R  37 0 R  2 0 R  6 0 R  2 0 R  31 0 R  2 0 R)
 endstream endobj
-44 0 obj << /Length 44 >> stream
-(14 0 R  2 0 R  25 0 R  21 0 R  2 0 R  25 0 R)
+44 0 obj << /Length 23 >> stream
+(14 0 R  2 0 R  25 0 R)
 endstream endobj
 % magic happens here:
 45 0 obj << /Length 50 >> stream
@@ -462,7 +460,7 @@ endstream endobj
 2 0 R 7 0 R 4 0 R 8 0 R 2 0 R 42 0 R 2 0 R 9 0 R 4 0 R 10 0 R 
 4 0 R 34 0 R 2 0 R 33 0 R 2 0 R 6 0 R 2 0 R 36 0 R 2 0 R 31 0 R 
 2 0 R 7 0 R 4 0 R 8 0 R 2 0 R 43 0 R 2 0 R 9 0 R 4 0 R 10 0 R 
-4 0 R 34 0 R 2 0 R 34 0 R 2 0 R 6 0 R 2 0 R 34 0 R 2 0 R 34 0 R 
+4 0 R 34 0 R 2 0 R 34 0 R 2 0 R 6 0 R 2 0 R 32 0 R 2 0 R 33 0 R 
 2 0 R 7 0 R 4 0 R 8 0 R 2 0 R 44 0 R 2 0 R 9 0 R 4 0 R 10 0 R 
 4 0 R 34 0 R 2 0 R 35 0 R 2 0 R 6 0 R 2 0 R 35 0 R 2 0 R 30 0 R 
 2 0 R 7 0 R 4 0 R 8 0 R 2 0 R 45 0 R 2 0 R 9 0 R 4 0 R 10 0 R 
@@ -606,6 +604,11 @@ endstream endobj
 83 0 R 4 0 R
 
 11 0 R ] >> endobj
+
+12 0 obj <</Type /Pages  /Kids [13 0 R  28 0 R  79 0 R  24 0 R
+26 0 R  92 0 R  93 0 R  89 0 R ]
+/Count 8  /MediaBox [0 0 595 842] >> endobj
+
 
 xref
 0 90
