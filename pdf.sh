@@ -5,7 +5,7 @@ main(){
         /^%/!d
         /^%END 16-/{
             i\
-'"$(objectsencoded 16 21 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 16-21 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -13,7 +13,7 @@ main(){
         /^%/!d
         /^%END PAGE 4/{
             i\
-'"$((objectsencoded 22 22 && objectsencoded 29 40)| wordwrap | sed 's/$/\\/')"'
+'"$((objectsencoded 22 29-40)| wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -21,7 +21,7 @@ main(){
         /^%/!d
         /^%END PAGE 5a/{
             i\
-'"$(objectsencoded 41 48 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 41-48 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -29,7 +29,7 @@ main(){
         /^%/!d
         /^%END PAGE 5b/{
             i\
-'"$(objectsencoded 50 53 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 50-53 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -37,7 +37,7 @@ main(){
         /^%/!d
         /^%END PAGE 6/{
             i\
-'"$(objectsencoded 54 66 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 54-66 | wordwrap | sed 's/$/\\/')"'
 
         }
     }
@@ -45,7 +45,7 @@ main(){
         /^%/!d
         /^%END PAGE 7/{
             i\
-'"$(objectsencoded 67 78 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 67-78 | wordwrap | sed 's/$/\\/')"'
 
         }
     }' quine.pdf
@@ -64,15 +64,26 @@ main(){
         /^%/!d
         /^%END PAGE 8/{
             i\
-'"$(objectsencoded 95 107 | wordwrap | sed 's/$/\\/')"'
+'"$(objectsencoded 95-107 | wordwrap | sed 's/$/\\/')"'
 
         }
     }' quine.pdf
 }
 
-objectsencoded()( from=$1; to=$2
-    for objnum in $(seq $from $to) ; do
-        objencoded $objnum "$(objdef $objnum)"
+objectsencoded()(
+    for arg; do
+        case $arg in
+            *-*)
+                from=${arg%-*}; to=${arg#*-}
+                for objnum in $(seq $from $to) ; do
+                    objencoded $objnum "$(objdef $objnum)"
+                done
+            ;;
+            *)
+                objnum=$arg
+                objencoded $objnum "$(objdef $objnum)"
+            ;;
+        esac
     done
 )
 
