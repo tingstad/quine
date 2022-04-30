@@ -52,6 +52,8 @@ main(){
 
     inplace quine.pdf sed -E '/^%START PAGE 8/,/^%FINISH PAGE/{
         /^%/!d
+    }' quine.pdf
+    inplace quine.pdf sed -E '/^%START PAGE 8/,/^%FINISH PAGE/{
         /^%FINISH PAGE/{
             i\
 '"$(declareobjs 79 | sed 's/$/\\/')"'
@@ -107,17 +109,49 @@ objdef()( num=$1
 )
 
 declareobjs()( num=$1
-    i=94
+    i=95
     while read -r line; do
         len=${#line}
         if [ $len -lt 1 ]; then continue; fi
         case "$line" in
             %*) continue ;;
         esac
-        printf '%d 0 obj << /Length %d >> stream\n(%s)\nendstream endobj\n' $((i+=1)) $((len+2)) "$line"
-    done <<EOF
-    $(sed -n '/^'$num' 0 obj << /,/] >> endobj$/p' quine.pdf)
+        decl=$(printf '%d 0 obj << /Length %d >> stream\n(%s)\nendstream endobj\n' $i $((len+2)) "$line")
+        if ! printf %s "$decl" | tail -n 2 | exists quine.pdf; then
+            echo "$decl"
+            i=$((i+1))
+        fi
+    done <<-EOF
+	$(sed -n '/^'$num' 0 obj << /,/] >> endobj$/p' quine.pdf)
 EOF
+)
+
+exists() (
+    #sed -n '1h;2,$H;${g;s/\n/\\n/g;p;}'
+    i=0
+    line=''
+    a=''
+    while read -r line || [ -n "$line" ]; do
+        a="$a
+            line[$((i+=1))] = \"$line\""
+    done
+    awk '
+        BEGIN {
+            '"$a"'
+            c = 1
+        }
+        {
+            if ($0 == line[c]) {
+                c++
+                if (c > length(line))
+                    exit 0
+            } else
+                c = 1
+        }
+        END {
+            exit (c > length(line)) ? 0 : 1
+        }
+    ' "$1"
 )
 
 wordwrap(){
@@ -148,6 +182,26 @@ inplace() {
     shift;
     temp=$(mktemp);
     "$@" < "$file" > "$temp" && mv "$temp" "$file" )
+}
+
+test() {
+    echo Test
+    decl='17 0 obj << /Length 64 >> stream
+(/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>)
+endstream endobj'
+    if ! printf %s "$decl" | exists quine.pdf; then
+        echo >&2 'Expected to find string in file'
+        exit 1
+    else
+        echo OK
+    fi
+    decl="$decl FOOO"
+    if printf %s "$decl" | exists quine.pdf; then
+        echo >&2 'Expected not to find in file'
+        exit 1
+    else
+        echo OK
+    fi
 }
 
 [ $# -eq 0 ] && main || "$@"
