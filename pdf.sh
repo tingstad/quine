@@ -90,6 +90,9 @@ main(){
 
         }
     }' quine.pdf
+
+    inplace quine.pdf sed '/^xref/,/^%EOF/d'
+    ./xref.sh quine.pdf >> quine.pdf
 }
 
 objectsencoded()(
