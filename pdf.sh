@@ -70,6 +70,26 @@ main(){
 
         }
     }' quine.pdf
+
+    inplace quine.pdf sed -E \
+    '/^%BEGIN PAGE 9/,/^%END PAGE 9/{
+        /^%/!d
+        /^%END PAGE 9/{
+            i\
+'"$(objectsencoded 108-120 | wordwrap | sed 's/$/\\/')"'
+
+        }
+    }' quine.pdf
+
+    inplace quine.pdf sed -E \
+    '/^%BEGIN PAGE 010/,/^%END PAGE 010/{
+        /^%/!d
+        /^%END PAGE 010/{
+            i\
+'"$(objectsencoded 121-132 | wordwrap | sed 's/$/\\/')"'
+
+        }
+    }' quine.pdf
 }
 
 objectsencoded()(
