@@ -101,6 +101,26 @@ main(){
         }
     }' quine.pdf
 
+    inplace quine.pdf sed -E '/^%START PAGE 012/,/^%FINISH PAGE/{
+        /^%/!d
+    }' quine.pdf
+    inplace quine.pdf sed -E '/^%START PAGE 012/,/^%FINISH PAGE/{
+        /^%FINISH PAGE/{
+            i\
+'"$(declareobjs 24 136 | sed 's/$/\\/')"'
+
+        }
+    }' quine.pdf
+
+    inplace quine.pdf sed -E \
+    '/^%BEGIN PAGE 012/,/^%END PAGE 012/{
+        /^%/!d
+        /^%END PAGE 012/{
+            i\
+'"$(objectsencoded 136-148 | wordwrap | sed 's/ *$/\\/')"'
+
+        }
+    }' quine.pdf
 
     inplace quine.pdf sed '/^xref/,/^%EOF/d'
     ./xref.sh quine.pdf >> quine.pdf
