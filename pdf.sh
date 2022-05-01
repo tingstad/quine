@@ -56,7 +56,7 @@ main(){
     inplace quine.pdf sed -E '/^%START PAGE 8/,/^%FINISH PAGE/{
         /^%FINISH PAGE/{
             i\
-'"$(declareobjs 79 | sed 's/$/\\/')"'
+'"$(declareobjs 79 95 | sed 's/$/\\/')"'
 
         }
     }' quine.pdf
@@ -142,8 +142,7 @@ objdef()( num=$1
     sed -n '/^'$num' 0 obj << /,/^endstream endobj$/p' quine.pdf
 )
 
-declareobjs()( num=$1
-    i=95
+declareobjs()( num=$1; i=$2
     while read -r line; do
         len=${#line}
         if [ $len -lt 1 ]; then continue; fi
