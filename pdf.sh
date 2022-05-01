@@ -91,6 +91,17 @@ main(){
         }
     }' quine.pdf
 
+    inplace quine.pdf sed -E \
+    '/^%BEGIN PAGE 011/,/^%END PAGE 011/{
+        /^%/!d
+        /^%END PAGE 011/{
+            i\
+'"$(printpageobj 79 | sed 's/$/\\/')"'
+
+        }
+    }' quine.pdf
+
+
     inplace quine.pdf sed '/^xref/,/^%EOF/d'
     ./xref.sh quine.pdf >> quine.pdf
 }
@@ -145,6 +156,22 @@ declareobjs()( num=$1
             i=$((i+1))
         fi
     done <<-EOF
+	$(sed -n '/^'$num' 0 obj << /,/] >> endobj$/p' quine.pdf)
+EOF
+)
+
+printpageobj()( num=$1
+    while read -r line; do
+        len=${#line}
+        if [ $len -lt 1 ]; then continue; fi
+        case "$line" in
+            %*) continue ;;
+        esac
+        line=$(printf %s "$line" | sed 's/\[/\\[/g')
+        contentline=$(grep -m 1 -n "^($line" quine.pdf | awk -F: '{print $1}')
+        objno=$(awk "NR == $((contentline - 1)) { print \$1 }" quine.pdf)
+        printf '%s 0 R 4 0 R ' $objno
+    done <<-EOF | wordwrap
 	$(sed -n '/^'$num' 0 obj << /,/] >> endobj$/p' quine.pdf)
 EOF
 )
