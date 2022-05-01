@@ -14,10 +14,10 @@ printf 'xref\n'\
 '0000000000 65535 f \n' $((count + 1))
 
 for i in $(seq 1 $count); do
-    offs=$(grep --byte-offset --only-matching --text "^$i 0 obj" "$file" | cut -d: -f1)
+    offs=$(grep -m 1 --byte-offset --only-matching --text "^$i 0 obj" "$file" | cut -d: -f1)
     printf "%010d 00000 n \n" $offs
 done
-start=$(grep --byte-offset --only-matching --text '^xref' "$file" | cut -d: -f1)
+start=$(grep -m 1 --byte-offset --only-matching --text '^xref' "$file" | cut -d: -f1)
 # sed '/^xref/,$d' "$file" | wc -c
 
 printf 'trailer << /Root 1 0 R /Size %d >>\n'\
