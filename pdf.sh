@@ -124,6 +124,8 @@ main(){
 
     createpageobj 163 "$(objectsencoded 149-161 | wordwrap)"
 
+    createpageobj 164 "$(printpageobj 24)"
+
     inplace quine.pdf sed '/^xref/,/^%EOF/d'
     ./xref.sh quine.pdf >> quine.pdf
 }
@@ -206,7 +208,7 @@ printpageobj()( num=$1
             %*) continue ;;
         esac
         line=$(printf %s "$line" | sed 's/\[/\\[/g')
-        contentline=$(grep -m 1 -n "^($line" quine.pdf | awk -F: '{print $1}')
+        contentline=$(grep -m 1 -n "^($line *)" quine.pdf | awk -F: '{print $1}')
         objno=$(awk "NR == $((contentline - 1)) { print \$1 }" quine.pdf)
         printf '%s 0 R 4 0 R ' $objno
     done <<-EOF | wordwrap
