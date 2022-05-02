@@ -122,13 +122,13 @@ main(){
         }
     }' quine.pdf
 
-    createpageobj 163 149-161
+    createpageobj 163 "$(objectsencoded 149-161 | wordwrap)"
 
     inplace quine.pdf sed '/^xref/,/^%EOF/d'
     ./xref.sh quine.pdf >> quine.pdf
 }
 
-createpageobj() ( num=$1
+createpageobj() ( num=$1; content="$2"
     shift
     inplace quine.pdf sed -E \
     '/^%BEGIN PAGEOBJ '$num'/,/^%END PAGEOBJ '$num'/{
@@ -138,7 +138,7 @@ createpageobj() ( num=$1
 '$num' 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<\
 /F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>\
 /Contents [ 15 0 R\
-'"$(objectsencoded $* | wordwrap | sed 's/ *$/\\/')"'
+'"$(printf %s "$content" | sed 's/ *$/\\/')"'
 11 0 R ] >> endobj\
 
         }
