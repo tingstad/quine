@@ -4,7 +4,7 @@
 1 0 obj << /Type /Catalog  /Pages 12 0 R >> endobj
 
 15 0 obj << /Length 31 >> stream
-BT  /F1 11 Tf  36 790 Td  18 TL
+BT  /F1 11 Tf  34 790 Td  18 TL
 endstream endobj
 
 27 0 obj << /Length 10 >> stream
@@ -15,10 +15,10 @@ endstream endobj
 Tj (\012) Tj T*
 endstream endobj
 
-13 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
-/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
-/Contents [ 15 0 R  27 0 R  4 0 R
-14 0 R  2 0 R  25 0 R
+13 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font << /F1 <</Type
+/Font  /Subtype /Type1  /BaseFont /Courier>> >> >> /Contents [ 15 0 R
+
+27 0 R  4 0 R  14 0 R  2 0 R  25 0 R
 
 % 15 0 ob <Len 3  /  1>str BT end
 31 0 R  2 0 R  35 0 R  2 0 R  6 0 R  2 0 R  33 0 R  2 0 R
@@ -29,7 +29,7 @@ endstream endobj
 30 0 R  2 0 R  7 0 R  4 0 R  8 0 R  2 0 R  27 0 R  2 0 R
 9 0 R  4 0 R  10 0 R  4 0 R  3 0 R
 
-% 4 0 ob </Len 10 >str
+% 4 0 ob </Len 15 >str
 34 0 R  2 0 R  6 0 R  2 0 R  31 0 R  2 0 R  35 0 R  2 0 R
 7 0 R  4 0 R  10 0 R  4 0 R  3 0 R
 
@@ -37,6 +37,8 @@ endstream endobj
 31 0 R 2 0 R 33 0 R 2 0 R 16 0 R  4 0 R  17 0 R  4 0 R  22 0 R  4 0 R
 
 11 0 R ] >> endobj
+
+%==================== PAGE 2 =================================
 
 14 0 obj << /Length 62 >> stream
 (%Content == source code  (https://github.com/tingstad/quine))
@@ -54,9 +56,8 @@ endstream endobj
 (\\)
 endstream endobj
 
-28 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
-/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
-/Contents [ 15 0 R  
+28 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font << /F1 <</Type
+/Font  /Subtype /Type1  /BaseFont /Courier>> >> >> /Contents [ 15 0 R
 
 % 14 0 ob Len 62
 31 0 R  2 0 R  34 0 R  2 0 R  6 0 R  2 0 R  36 0 R  2 0 R
@@ -107,28 +108,30 @@ endstream endobj
 ET
 endstream endobj
 
-16 0 obj << /Length 76 >> stream
-( 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<             )
+%================================================================
+
+16 0 obj << /Length 80 >> stream
+( 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font << /F1 <</Type     )
 endstream endobj
 
-17 0 obj << /Length 64 >> stream
-(/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>)
+17 0 obj << /Length 80 >> stream
+(/Font  /Subtype /Type1  /BaseFont /Courier>> >> >> /Contents [ 15 0 R         )
 endstream endobj
 
 18 0 obj << /Length 61 >> stream
-Tj ( 0 obj << /Length 76 >> stream) Tj (\012) Tj T* (\050) Tj
+Tj ( 0 obj << /Length 80 >> stream) Tj (\012) Tj T* (\050) Tj
 endstream endobj
 
 19 0 obj << /Length 60 >> stream
 Tj (\051) Tj (\012) Tj T* (endstream endobj) Tj (\012) Tj T*
 endstream endobj
 
-20 0 obj << /Length 76 >> stream
-( 0 obj << /Length 76 >> stream                                            )
+20 0 obj << /Length 80 >> stream
+( 0 obj << /Length 80 >> stream                                                )
 endstream endobj
 
-21 0 obj << /Length 76 >> stream
-(11 0 R ] >> endobj                                                        )
+21 0 obj << /Length 80 >> stream
+(11 0 R ] >> endobj                                                            )
 endstream endobj
 
 25 0 obj << /Length 26 >> stream
@@ -137,8 +140,8 @@ endstream endobj
 
 %====================PAGE 3 / 4=================================
 
-22 0 obj << /Length 35 >> stream
-(/Contents [ 15 0 R  27 0 R  4 0 R)
+22 0 obj << /Length 38 >> stream
+(27 0 R  4 0 R  14 0 R  2 0 R  25 0 R)
 endstream endobj
 23 0 obj << /Length 4 >> stream
 (ET)
@@ -181,21 +184,20 @@ endstream endobj
 endstream endobj
 
 40 0 obj << /Length 33 >> stream
-(BT  /F1 12 Tf  50 774 Td  18 TL)
+(BT  /F1 11 Tf  34 790 Td  18 TL)
 endstream endobj
 
 % Page 3:
-24 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
-/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
-/Contents [ 15 0 R
+24 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font << /F1 <</Type
+/Font  /Subtype /Type1  /BaseFont /Courier>> >> >> /Contents [ 15 0 R
 
 11 0 R ] >> endobj
 
 % Page 4:
-26 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font <<
-/F1 <</Type /Font  /Subtype /Type1  /BaseFont /Courier>> >> >>
-/Contents [ 15 0 R 31 0 R 2 0 R 36 0 R 18 0 R 16 0 R 19 0 R 32 0 R 2 0 R
-%                        1       6     ob            end     2
+26 0 obj << /Type /Page  /Parent 12 0 R  /Resources << /Font << /F1 <</Type
+/Font  /Subtype /Type1  /BaseFont /Courier>> >> >> /Contents [ 15 0 R
+31 0 R 2 0 R 36 0 R 18 0 R 16 0 R 19 0 R 32 0 R 2 0 R
+%1        6     ob            end     2
 
 %6                        F1 ...       "line 1"     "line 2"     "line 3"
 36 0 R 2 0 R 16 0 R 4 0 R 17 0 R 4 0 R 41 0 R 4 0 R 42 0 R 4 0 R 43 0 R
@@ -215,29 +217,29 @@ endstream endobj
 46 0 R 19 0 R 34 0 R 2 0 R 37 0 R 18 0 R 47 0 R 19 0 R 11 0 R ] >> endobj
 
 % 16 ob
-41 0 obj << /Length 76 >> stream
-(/Contents [ 15 0 R 31 0 R 2 0 R 36 0 R 18 0 R 16 0 R 19 0 R 32 0 R 2 0 R  )
+41 0 obj << /Length 80 >> stream
+(31 0 R 2 0 R 36 0 R 18 0 R 16 0 R 19 0 R 32 0 R 2 0 R                         )
 endstream endobj
-42 0 obj << /Length 76 >> stream
-(36 0 R 2 0 R 16 0 R 4 0 R 17 0 R 4 0 R 41 0 R 4 0 R 42 0 R 4 0 R 43 0 R   )
+42 0 obj << /Length 80 >> stream
+(36 0 R 2 0 R 16 0 R 4 0 R 17 0 R 4 0 R 41 0 R 4 0 R 42 0 R 4 0 R 43 0 R       )
 endstream endobj
-43 0 obj << /Length 76 >> stream
-(4 0 R 44 0 R 4 0 R 45 0 R 4 0 R 46 0 R 4 0 R 47 0 R 4 0 R 34 0 R 2 0 R    )
+43 0 obj << /Length 80 >> stream
+(4 0 R 44 0 R 4 0 R 45 0 R 4 0 R 46 0 R 4 0 R 47 0 R 4 0 R 34 0 R 2 0 R        )
 endstream endobj
-44 0 obj << /Length 76 >> stream
-(31 0 R 18 0 R 41 0 R 19 0 R 34 0 R 2 0 R 32 0 R 18 0 R 42 0 R 19 0 R      )
+44 0 obj << /Length 80 >> stream
+(31 0 R 18 0 R 41 0 R 19 0 R 34 0 R 2 0 R 32 0 R 18 0 R 42 0 R 19 0 R          )
 endstream endobj
-45 0 obj << /Length 76 >> stream
-(34 0 R 2 0 R 33 0 R 18 0 R 43 0 R 19 0 R 34 0 R 2 0 R 34 0 R 18 0 R 44 0 R)
+45 0 obj << /Length 80 >> stream
+(34 0 R 2 0 R 33 0 R 18 0 R 43 0 R 19 0 R 34 0 R 2 0 R 34 0 R 18 0 R 44 0 R    )
 endstream endobj
-46 0 obj << /Length 76 >> stream
-(19 0 R 34 0 R 2 0 R 35 0 R 18 0 R 45 0 R 19 0 R 34 0 R 2 0 R 36 0 R 18 0 R)
+46 0 obj << /Length 80 >> stream
+(19 0 R 34 0 R 2 0 R 35 0 R 18 0 R 45 0 R 19 0 R 34 0 R 2 0 R 36 0 R 18 0 R    )
 endstream endobj
 47 0 obj << /Length 21 >> stream
-(46 0 R 19 0 R 34 0 R 2 0 R 37 0 R 18 0 R 47 0 R 19 0 R 11 0 R ] >> endobj )
+(46 0 R 19 0 R 34 0 R 2 0 R 37 0 R 18 0 R 47 0 R 19 0 R 11 0 R ] >> endobj     )
 endstream endobj
 
-
+%==========================================================================
 
 12 0 obj <</Type /Pages  /Kids [13 0 R  28 0 R  24 0 R
 26 0 R ]
@@ -248,53 +250,53 @@ xref
 0 48
 0000000000 65535 f 
 0000000071 00000 n 
-0000001215 00000 n 
-0000001267 00000 n 
+0000001280 00000 n 
+0000001332 00000 n 
 0000000268 00000 n 
-0000001330 00000 n 
-0000002245 00000 n 
-0000002316 00000 n 
+0000001395 00000 n 
+0000002308 00000 n 
 0000002379 00000 n 
-0000002435 00000 n 
-0000002491 00000 n 
-0000002561 00000 n 
-0000006355 00000 n 
+0000002442 00000 n 
+0000002498 00000 n 
+0000002554 00000 n 
+0000002624 00000 n 
+0000006596 00000 n 
 0000000334 00000 n 
-0000001101 00000 n 
+0000001166 00000 n 
 0000000123 00000 n 
-0000002614 00000 n 
-0000002742 00000 n 
-0000002858 00000 n 
-0000002971 00000 n 
-0000003083 00000 n 
-0000003211 00000 n 
-0000003483 00000 n 
-0000003569 00000 n 
-0000004305 00000 n 
-0000003339 00000 n 
-0000004482 00000 n 
+0000002744 00000 n 
+0000002876 00000 n 
+0000003008 00000 n 
+0000003121 00000 n 
+0000003233 00000 n 
+0000003365 00000 n 
+0000003641 00000 n 
+0000003730 00000 n 
+0000004466 00000 n 
+0000003497 00000 n 
+0000004643 00000 n 
 0000000206 00000 n 
-0000001384 00000 n 
-0000003625 00000 n 
-0000003679 00000 n 
-0000003732 00000 n 
-0000003785 00000 n 
-0000003838 00000 n 
-0000003891 00000 n 
-0000003944 00000 n 
-0000003997 00000 n 
-0000004050 00000 n 
-0000004103 00000 n 
-0000004156 00000 n 
-0000004210 00000 n 
-0000005463 00000 n 
-0000005590 00000 n 
-0000005717 00000 n 
-0000005844 00000 n 
-0000005971 00000 n 
-0000006098 00000 n 
-0000006225 00000 n 
+0000001449 00000 n 
+0000003786 00000 n 
+0000003840 00000 n 
+0000003893 00000 n 
+0000003946 00000 n 
+0000003999 00000 n 
+0000004052 00000 n 
+0000004105 00000 n 
+0000004158 00000 n 
+0000004211 00000 n 
+0000004264 00000 n 
+0000004317 00000 n 
+0000004371 00000 n 
+0000005601 00000 n 
+0000005732 00000 n 
+0000005863 00000 n 
+0000005994 00000 n 
+0000006125 00000 n 
+0000006256 00000 n 
+0000006387 00000 n 
 trailer << /Root 1 0 R /Size 48 >>
 startxref
-6465
+6706
 %%EOF
