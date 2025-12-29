@@ -30,3 +30,9 @@ I did not want to use `printf %s` for this quine. The trick was to get the quoti
 In [quine2.sh](https://github.com/tingstad/quine/blob/main/quine2.sh) I wanted to avoid variable assignments and minimize string interpretation (no `%` and `$`) and just use simple `printf` and zero-argument functions/procedures.
 
 </details>
+
+### PDF quine
+
+I was curious if it was possible — it took many hours and a few hundred lines, but I present:
+
+[quine.pdf](quine.pdf)
