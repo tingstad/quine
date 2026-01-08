@@ -35,7 +35,7 @@ In [quine2.sh](https://github.com/tingstad/quine/blob/main/quine2.sh) I wanted t
 
 I was curious if it was possible — it took many hours and a few hundred lines, but I present:
 
-📄 *[quine.pdf](quine.pdf)*
+📃 *[quine.pdf](quine.pdf)*
 
 (Notes: [pdf.md](pdf.md))
 
